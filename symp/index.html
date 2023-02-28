@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./images/circuit.png">
+    <title>IMAGE 2K23</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+</head>
+<style>
+    
+  </style>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <h1><a href="#">IMAGE2k23</a></h1>
+            </div>
+            
+           <div class="navitem">
+            <a href="#Home">Home</a>
+                <a href="#AboutUs">AboutUs</a>
+                <a href="#Events">Events</a>
+                <a href="#ContactUs">ContactUs</a>
+           </div>
+        </nav>
+    </header>
+    <section id="Home">
+        <div class="slideshow-container">
+            <div class="mySlides fade">
+             
+              <img src="./images/s1.jpg" style="width:100%">
+
+              <div class="text">
+                content About IMAGE
+              </div>
+            </div>
+            <div class="mySlides fade">
+             
+              <img src="./images/s2.jpg" style="width:100%">
+              <div class="text1">
+                  <div class="pic">
+                      
+                  </div> 
+              </div>
+              <div class="text">Content ABOUT IMAGE</div>
+            </div>
+            <div class="mySlides fade">
+                     <img src="./images/icon.png" style="width:100%">
+                     <div class="text1">
+                      <div class="pic">
+                          
+                      </div> 
+                     </div>
+                     <div class="text">Content ABOUT IMAGE</div>
+            </div>
+             </div>
+          <br>
+          <div style="text-align:center">
+            <span class="dot" onclick="currentSlide(0)"></span>
+            <span class="dot" onclick="currentSlide(1)"></span>
+            <span class="dot" onclick="currentSlide(2)"></span>
+          </div> 
+        </section>
+    <section id="AboutUs">
+
+    </section>
+    <section id="Events">
+
+    </section>
+    <footer id="ContactUs">
+            <h1>CONTACT DETAILS</h1>
+            <div class="contact">
+                <h2>STAFF INCHARGES:</h2>
+                <pre>
+    SHANMUGASUNDARAM R   : 9751661542
+    SILAMBARASAN A                   : 9944244351
+    HARI M N                                     : 8667614104
+                </pre>
+        <div class="contact">
+            <h2>STUDENT CO-ORDINATORS:</h2>
+            <pre>
+    NANDHAGOPAL VIGNESH A   : 8525876050 
+    SRINIVAS KRISHNA S K             : 7708888416
+            </pre>
+        </div>
+    </footer>
+</body>
+
+<script>
+
+let slideIndex = 0;
+      let timeoutId = null;
+      const slides = document.getElementsByClassName("mySlides");
+      const dots = document.getElementsByClassName("dot");
+     
+      showSlides();
+      function currentSlide(index) {
+           slideIndex = index;
+           showSlides();
+      }
+     function plusSlides(step) {
+       
+        if(step < 0) {
+            slideIndex -= 2;
+           
+            if(slideIndex < 0) {
+              slideIndex = slides.length - 1;
+            }
+        }
+       
+        showSlides();
+     }
+      function showSlides() {
+        for(let i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+          dots[i].classList.remove('active');
+        }
+        slideIndex++;
+        if(slideIndex > slides.length) {
+          slideIndex = 1
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].classList.add('active');
+         if(timeoutId) {
+            clearTimeout(timeoutId);
+         }
+        timeoutId = setTimeout(showSlides, 5000); 
+      }
+
+</script>
+</html>
